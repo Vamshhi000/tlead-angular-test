@@ -1,0 +1,23 @@
+.header{
+    width: 100%;
+    background-color:crimson;
+    justify-content: left;
+    color:white;
+  }
+  .createe{
+    /* margin-left: 4rem; */
+    text-align: center;
+
+  }
+
+  .container {
+
+    display: flex;
+    flex-direction: row ;
+    flex-wrap:wrap ;
+   
+    justify-content: space-around;
+  
+  
+  
+  }

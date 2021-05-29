@@ -1,0 +1,49 @@
+
+<app-nav-bar-main></app-nav-bar-main>
+
+
+
+        <div class="container">
+
+            <table class="table table-hover">
+
+                <thead>
+    
+                      
+                  <tr>
+
+                    <th class="bg-primary" scope="col">REFERAL ID</th>
+                    <th class="bg-primary" scope="col">EMAIL</th>
+                  </tr>
+                </thead>
+
+   
+                <tbody *ngFor="let recipient of map  | keyvalue;let indexOfelement=index;">
+                    <tr>
+
+                        <th class="p-3 mb-2 bg-success text-white" scope="col">REFERAL No : {{indexOfelement+1}}</th>
+                        <th class="p-3 mb-2 bg-success text-white" scope="col">MY REFERAL</th>
+                      </tr> 
+                      <tr >
+     
+                        <td class="p-3 mb-2 bg-success text-white"><b>{{recipient.key.substring(0, 10)}}</b></td>
+                        <td class="p-3 mb-2 bg-success text-white"><b>{{recipient.key.substring(11, recipient.length)}}</b></td>
+                      </tr>
+                      <tr>
+
+                        <th class="p-3 mb-2 bg-light text-dark" scope="col"></th>
+                        <th class="p-3 mb-2 bg-light text-dark" scope="col">FRIEND REFERALS</th>
+                      </tr> 
+                  <tr *ngFor="let ref of recipient.value">
+     
+                    <td class="p-3 mb-2 bg-light text-dark">{{ref.refId}}</td>
+                    <td class="p-3 mb-2 bg-light text-dark">{{ref.email}}</td>
+                  </tr>
+
+
+                </tbody>
+              </table>
+
+
+        </div>           
+

@@ -1,0 +1,86 @@
+
+<body  class="p-3 mb-2 bg-dark text-white" ><div class="bg-dark"></div> 
+ 
+
+    <div fxLayoutAlign="center center" fxFlexFill class="main-div">
+ 
+    <mat-card class="cc" fxFlex="27%" fxFlex.xs="80%" fxFlex.sm="40%">
+      <div *ngIf="pBar">
+
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </div>
+      <mat-toolbar fxLayoutAlign="center center"  class="bg-secondary">
+        <img class="img"  [src]=myimg></mat-toolbar>
+        <form fxLayoutAlign="stretch" fxLayout="column" class="loginform" [formGroup]="userform">
+    
+    
+
+    
+       
+    
+    
+    
+    
+    
+    
+    
+    
+     
+            <mat-form-field >
+            
+              <mat-label>Email
+        
+              </mat-label>
+              <input  matInput type="email" placeholder="ex@example.com" formControlName='email'>
+              <mat-error  *ngIf="this.userform.get('email').errors" >
+                Enter a valid email id
+              </mat-error>
+    
+    
+            </mat-form-field>
+            
+            
+     
+    
+            <mat-form-field >
+                <mat-label>password</mat-label>
+                <input matInput type="password" placeholder="password" formControlName='password' >
+    
+                <mat-error  *ngIf="(this.userform.get('password').touched ) && this.userform.get('password').errors?.required" >
+                  Password is required
+                 </mat-error>
+              
+              </mat-form-field>
+            
+    
+         
+     
+    
+
+    
+        
+  
+    
+    <button [disabled]="userform.invalid || disableLogin"  mat-raised-button type="submit" class="bg-secondary" (click)="jwtLogin()"><b>LOGIN</b></button>
+    <a routerLink="/forgotPassword"> <b>FORGOT PASSWORD?</b></a>
+    <a   routerLink="/RegisterComponent"> <b>REGISTER</b></a> 
+    
+    
+
+   
+  </form>
+
+       
+    </mat-card>
+    
+    
+    </div>
+    
+    <!-- *ngIf="alert" -->
+    
+    
+    
+    </body>
+    
+    
+    

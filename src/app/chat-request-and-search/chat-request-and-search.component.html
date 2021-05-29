@@ -1,0 +1,28 @@
+
+
+  <div fxLayoutAlign="center" class="alert alert-primary" role="alert">
+    <b>{{display}}</b>
+       </div>
+    <table class="table">
+    
+        <tbody *ngIf="isRequest">
+          <tr *ngFor="let x of user">
+        
+            <td><b>{{x.userName}}</b></td>
+            <td><button [disabled]="x.requestStatus"  type="button" class="btn btn-primary" (click)="saveRequest(x)">REQUEST</button></td>
+            <td> <button [disabled]="x.cancelStatus" type="button" class="btn btn-danger" (click)="cancelRequest(x)">CANCEL</button></td>
+          </tr>
+        
+        </tbody>
+
+
+        <tbody *ngIf="isAccept">
+          <tr *ngFor="let x of user">
+        
+            <td><b>{{x.userName}}</b></td>
+            <td><button [disabled]="x.acceptStatus"  type="button" class="btn btn-primary " (click)="saveFriends(x)">ACCEPT</button></td>
+            <td> <button [disabled]="x.cancelStatus" type="button" class="btn btn-danger" (click)="cancelAccept(x)">CANCEL</button></td>
+          </tr>
+        
+        </tbody>
+      </table>

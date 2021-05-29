@@ -1,0 +1,47 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  .container {
+
+    display: flex;
+
+    flex-wrap:wrap ;
+    width: 100%;
+ margin-top: 2rem;
+  
+  
+  
+  }
+
+
+  .btn{
+    text-align: right;
+    margin-right: 5rem;
+}
+
+  table {
+    width: 100%;
+  }
+
+  .total{
+    text-align: right;
+    margin-top: 2rem;
+    margin-right: 4rem;
+  }
+  .colorr{
+    color:yellow;
+  }
+.custom-btn{
+  margin-right: 5px !important;
+}
+
+.paid{
+  color:green;
+}
+.unpaid{
+  color:red;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}

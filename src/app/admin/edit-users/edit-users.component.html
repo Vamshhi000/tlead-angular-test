@@ -1,0 +1,176 @@
+
+     
+
+      
+        <form fxLayoutAlign="stretch" fxLayout="column" class="loginform" [formGroup]="userform">
+    
+    
+            <mat-form-field >
+              <mat-label>FirstName</mat-label>
+              <input  matInput [ngModel]="userdata.firstName"
+                     placeholder="FirstName" formControlName='firstName'>
+      
+              <mat-error  *ngIf="this.userform.get('firstName').touched || this.userform.get('firstName').errors" >
+                FirstName should not below 5 letters & above 12 letters 
+              </mat-error>
+              
+              
+            </mat-form-field>
+      
+            <mat-form-field >
+              <mat-label>LastName</mat-label>
+              <input matInput [ngModel]="userdata.lastName"
+                     placeholder="LastName" formControlName='lastName'>
+      
+              <mat-error  *ngIf="this.userform.get('lastName').touched || this.userform.get('lastName').errors" >
+                lastName should not below 5 letters & above 12 letters 
+              </mat-error>
+              
+              
+            </mat-form-field>
+      
+      
+      
+      
+      
+      
+      
+      
+       
+              <mat-form-field >
+              
+                <mat-label>Email
+           
+                </mat-label>
+                <input  matInput [ngModel]="userdata.email" type="email" placeholder="ex@example.com" formControlName='email'>
+                <mat-error  *ngIf="this.userform.get('email').errors" >
+                  Enter a valid email id
+                </mat-error>
+      
+      
+              </mat-form-field>
+              
+              
+              
+      
+      
+      
+              
+      
+           
+              <mat-form-field >
+              
+                <mat-label>MobileNo
+    
+                </mat-label>
+                <input  matInput [ngModel]="userdata.phoneNumber" placeholder="987654321" formControlName='phoneNumber'>
+                <mat-error  *ngIf="this.userform.get('phoneNumber').errors" >
+                  Enter a valid Number
+                </mat-error>
+      
+      
+              </mat-form-field>
+             
+           
+      
+              <!-- <mat-form-field >
+                  <mat-label>password</mat-label>
+                  <input matInput  type="password" placeholder="password" formControlName='password'>
+      
+                  <mat-error  *ngIf="(this.userform.get('password').touched ) && this.userform.get('password').errors?.required" >
+                    Password is required
+                   </mat-error>
+                   <mat-error  *ngIf="this.userform.get('password').touched && this.userform.get('password').errors?.invalidPassword" >
+                    Password should have minimum 8 characters, at least 1 uppercase letter, 1 lowercase
+                    letter and 1 number
+                   </mat-error>
+                </mat-form-field>
+      
+                <mat-form-field >
+                  
+                  <input matInput  type="password" 
+                         placeholder="confirmPassword" formControlName='reenterPassword'>
+      
+                         <mat-error  *ngIf="(this.userform.get('reenterPassword').touched ) && this.userform.get('reenterPassword').errors?.required" >
+                          confirmPassword is required
+                         </mat-error>
+                         <mat-error  *ngIf="this.userform.get('reenterPassword').touched && this.userform.get('reenterPassword').errors?.passwordMismatch" >
+                          Passwords doesnot match
+                         </mat-error>
+                
+                </mat-form-field> -->
+
+
+
+
+
+                <!-- <mat-form-field >
+                    <mat-label>myRefId</mat-label>
+                    <input matInput [ngModel]="userdata.myRefId"
+                           placeholder="LastName" formControlName='myRefId'>
+            
+                    <mat-error  *ngIf="this.userform.get('myRefId').touched" >
+                        paid status myRefId
+                    </mat-error>
+                    
+                    
+                  </mat-form-field> -->
+
+
+
+                  <mat-form-field >
+                    <mat-label>Paid Status</mat-label>
+                    <input matInput [ngModel]="userdata.status"
+                           placeholder="Paid status" formControlName='status'>
+            
+                    <mat-error  *ngIf="this.userform.get('status').touched" >
+                     paid status required
+                    </mat-error>
+                    
+                    
+                  </mat-form-field>
+
+
+                  <mat-form-field >
+                    <mat-label>orderId</mat-label>
+                    <input matInput [ngModel]="userdata.orderId"
+                           placeholder="orderId" formControlName='orderId'>
+            
+                    <mat-error  *ngIf="this.userform.get('orderId').touched" >
+                     orderId required
+                    </mat-error>
+                    
+                    
+                  </mat-form-field>
+
+
+
+
+                  <mat-form-field >
+                    <mat-label>paymentId</mat-label>
+                    <input matInput [ngModel]="userdata.paymentId"
+                           placeholder="paymentId" formControlName='paymentId'>
+            
+                    <mat-error  *ngIf="this.userform.get('paymentId').touched" >
+                   payment id required
+                    </mat-error>
+                    
+                    
+                  </mat-form-field>
+
+
+
+
+      <!-- <div class="wwidth">
+        <input class="form-control" [ngModel]="userdata.referalId" aria-describedby="emailHelp" placeholder="
+      ReferalId" formControlName='referalId'>
+      </div> -->
+      
+      <button [disabled]="userform.invalid"   mat-raised-button type="submit" class="bg-secondary" (click)="editUsers()" ><b>EDIT USER</b></button>
+  
+      
+      
+      
+            </form>
+  
+  

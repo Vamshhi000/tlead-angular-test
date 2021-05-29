@@ -1,0 +1,269 @@
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <div class="toggle">
+    <button type="button" class="btn btn-primary" (click)="openBottomSheet()">CHAT REQUIESTS</button>
+    <div class="container" fxLayoutAlign="center">
+        <mat-drawer-container  [hasBackdrop]="true">
+            <mat-drawer #drawer mode="over">
+    
+    
+    
+                <div class="users-container">
+                    <div class="chat-search-box">
+                        <div class="input-group">
+                          <div class="form-group">
+                          
+                            <input type="text" [(ngModel)]="name" class="form-control" name="name" placeholder="Name, Email or Number"> <br>
+                            
+                        </div>
+                           
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-info" (click)="searchResult()">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+            <!-- </div> -->
+                <ul class="users" *ngFor="let frnds of friends">
+               
+                    <li class="person " data-chat="person1" (click)="bindChatPerson(frnds)">
+                        <div class="user" >
+                            <img [src]=myimg alt="Retail Admin">
+                            <b>{{frnds.recipientName}}</b>
+                        </div>
+                        <p class="name-time" >
+                            <span class="name">JOINED</span>
+                            <span class="time">{{frnds.timestamp}}</span>
+                        </p>
+                    </li>
+        
+                    <li><hr style="width:100%;text-align:left;margin-left:0"></li>
+            
+                   
+                </ul>
+            </div>
+    
+      
+            </mat-drawer>
+             <mat-drawer-content>
+      
+      
+                <div >
+                    <button mat-raised-button (click)="drawer.toggle()">
+        
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8zm-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5z"/>
+                          </svg>CHATS
+                      </button>
+                </div>
+        
+           
+                <div class="selected-user">
+                    <span>To: <span class="name">{{chatPerson}}</span></span>
+                </div>
+                <div class="chat-container">
+                    <ul class="chat-box chatContainerScroll" *ngFor="let msgs of x">
+
+
+                        <li class="chat-left" *ngIf="msgs.chatEmail!='email'">
+                            <div class="chat-avatar">
+                                
+                                <div class="chat-name">{{msgs.recipientName}}</div>
+                            </div>
+                            <div class="chat-text">{{msgs.msg}}</div>
+                            <div class="chat-hour">{{msgs.timestamp}} <span class="fa fa-check-circle"></span></div>
+                        </li>
+
+
+                        <li class="chat-right" *ngIf="msgs.chatEmail=='email'">
+                           
+                            <div class="chat-hour">{{msgs.timestamp}}<span class="fa fa-check-circle"></span></div>
+                            <div class="chat-text">{{msgs.msg}}</div>
+                            <div class="chat-avatar">
+                              
+                                <div class="chat-name">{{msgs.recipientName}}</div>
+                            </div>
+                        </li>
+                        
+                    </ul>
+                   
+              
+
+                       
+                    <form action="#" class="bg-light">
+                        <div class="input-group">
+                          <input placeholder="Type a message" aria-describedby="button-addon2"  type="text" [(ngModel)]="message" class="form-control" name="message"  value="" 
+                          id="myinput" class="form-control rounded-0 border-0 py-4 bg-light">
+                          <div class="input-group-append">
+                            <button id="button-addon2" type="submit" class="btn btn-link" (click)="send()" onclick=
+                            "document.getElementById(
+                             'myinput').value = ''"> <i class="fa fa-paper-plane"></i></button>
+                          </div>
+                        </div>
+                      </form>
+                 
+                </div>
+         
+       
+            </mat-drawer-content>
+    
+        
+          </mat-drawer-container>
+    </div>
+  </div>
+
+
+
+
+<!-- ----------------------**************************************************************************************-------------------------- -->
+<div class="toggle1">
+<div class="container">
+    <button type="button" class="btn btn-primary" (click)="openBottomSheet()">CHAT REQUIESTS</button>
+    
+  <div class="chat-search-box1">
+    <div class="input-group">
+      <div class="form-group">
+      
+        <input type="text" [(ngModel)]="name" class="form-control" name="name" placeholder="Name, Email or Number"> <br>
+        
+    </div>
+      
+        <div class="input-group-btn">
+            <button type="button" class="btn btn-info" (click)="searchResult()">
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
+    </div>
+</div>
+</div>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+
+
+    <!-- Content wrapper start -->
+    <div class="content-wrapper">
+
+        <!-- Row start -->
+        <div class="row gutters">
+
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+              
+                <div class="card m-0">
+
+                    <!-- Row start -->
+                    <div class="row no-gutters">
+                      
+                        <!-- <div> -->
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-3 col-3">
+                                <div class="users-container">
+                                    <div class="chat-search-box">
+                                        <div class="input-group">
+                                          <div class="form-group">
+                                          
+                                            <input type="text" [(ngModel)]="name" class="form-control" name="name" placeholder="Name, Email or Number"> <br>
+                                        
+                                        </div>
+                                           
+                                            <div class="input-group-btn">
+                                                <button type="button" class="btn btn-info" (click)="searchResult()">
+                                                    <i class="fa fa-search"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                        <!-- </div> -->
+                                <ul class="users" *ngFor="let frnds of friends">
+                             
+                                    <li class="person " data-chat="person1" (click)="bindChatPerson(frnds)">
+                                        <div class="user" >
+                                            <img [src]=myimg alt="Retail Admin">
+                                            <b>{{frnds.recipientName}}</b>
+                                        </div>
+                                        <p class="name-time" >
+                                            <span class="time">Joined on</span>
+                                            <span class="time">:</span>
+                                            <span class="time">{{frnds.timestamp.substring(0,11)}}</span>
+                                        </p>
+                                    </li>
+                           
+                                    <li><hr style="width:100%;text-align:left;margin-left:0"></li>
+                
+                                   
+                                </ul>
+                            </div>
+                        </div>
+
+
+<!-- ********************************************************************************************************** -->
+
+
+                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-9 col-9">
+                         
+                            <div class="selected-user">
+                                <span>To: <span class="name">{{chatPerson}}</span></span>
+                            </div>
+                            <div class="chat-container">
+                                <ul class="chat-box chatContainerScroll" *ngFor="let msgs of x">
+
+
+                                    <li class="chat-left" *ngIf="msgs.chatEmail==email">
+                                        <div class="chat-avatar">
+                                            
+                                            <div class="chat-name">{{msgs.senderName}}</div>
+                                        </div>
+                                        <div class="chat-text">{{msgs.msg}}</div>
+                                        <div class="chat-hour">{{msgs.timestamp}} <span class="fa fa-check-circle"></span></div>
+                                    </li>
+
+
+                                    <li class="chat-right" *ngIf="msgs.chatEmail!=email">
+                                        <div class="chat-hour">{{msgs.timestamp}} <span class="fa fa-check-circle"></span></div>
+                                        <div class="chat-text">{{msgs.msg}}</div>
+                                        <div class="chat-avatar">
+                                          
+                                            <div class="chat-name">{{msgs.senderName}}</div>
+                                        </div>
+                                    </li>
+                               
+                                </ul>
+                               
+                                <!-- <img fxLayoutAlign="center" class="img"  [src]=nochatsimg> -->
+          
+                                   
+                                <form action="#" class="bg-light">
+                                    <div class="input-group">
+                                      <input placeholder="Type a message" aria-describedby="button-addon2"  type="text" [(ngModel)]="message" class="form-control" name="message" id="myInput" value="" class="form-control rounded-0 border-0 py-4 bg-light">
+                                      <div class="input-group-append">
+                                        <button id="button-addon2" type="submit" class="btn btn-link" (click)="send()" onclick="document.getElementById('myInput').value = ''"> <i class="fa fa-paper-plane"></i></button>
+                                      </div>
+                                    </div>
+                                  </form>
+                             
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Row end -->
+                </div>
+
+            </div>
+
+        </div>
+        <!-- Row end -->
+
+    </div>
+    <!-- Content wrapper end -->
+
+</div>
+
+</div>
+
+
+    
+
+
+
+
+
+

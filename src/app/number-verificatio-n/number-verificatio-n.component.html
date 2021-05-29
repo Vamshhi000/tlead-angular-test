@@ -1,0 +1,74 @@
+<div *ngIf="pBar">
+
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</div>
+  <div *ngIf="alert">
+    <div [ngClass]="isSucuess===true ? 'alert alert-success':'alert alert-danger'" role="alert">
+        {{msg}}
+          </div>
+  </div>
+ 
+<div class="alert alert-success" role="alert">
+    <h4 class="alert-heading">{{header}}</h4>
+    <p>{{content}}</p>
+    <hr>
+    
+  </div>
+
+
+<div *ngIf="isEmail">
+
+<form class="example-form"  [formGroup]="userform">
+    <mat-form-field class="example-full-width" appearance="outline">
+     
+      <input matInput [ngModel]="userEmail"
+              formControlName='number'>
+
+              <mat-error  *ngIf="this.userform.get('number').errors && this.userform.get('number').errors.invalidNumber ">
+                Enter a valid phone number
+                 </mat-error>
+      
+    </mat-form-field>
+
+
+  </form>
+
+  <button [disabled]="otpButton" [disabled]="userform.invalid" type="button" class="btn btn-primary" (click)="sendNumberOtp()">Submit</button>
+
+
+</div>
+
+<div *ngIf="isOtp">
+
+
+      <form class="example-form"  [formGroup]="userform">
+        <mat-form-field class="example-full-width">
+         
+          <input matInput 
+               placeholder="Enter verification code" formControlName='otp' >
+    
+          <mat-error  *ngIf="this.userform.get('otp').errors" >
+            Please enter a valid otp
+          </mat-error>
+          
+        </mat-form-field>
+    
+    
+      </form>
+
+      <div>
+        <button [disabled]="userform.invalid"  type="button" class="btn btn-primary" (click)="submitNumberOtp()">Verify</button>
+        <button class="btn:not(:disabled):not(.disabled)"  [disabled]="otpButton"  type="button" class="btn btn-success" (click)="resendOtp()">Resend</button>
+      </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+ 

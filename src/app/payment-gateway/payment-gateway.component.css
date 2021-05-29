@@ -1,0 +1,61 @@
+/* .main-div mat-card{
+
+    padding: 0px;
+    
+  } */
+  .loginform{
+    padding: 20px;
+    
+  }
+  .cc{
+    flex: 0 0 250px
+  }
+  .container {
+  
+  
+    
+  
+  
+    justify-content: space-between;
+  
+  
+  
+  }
+  .wwidth{
+    width: 50%;
+    margin-bottom: 8px;
+    /* padding: 2rem; */
+  }
+
+  .blue-snackbar {
+    background: #2196F3;
+  }
+  
+  .container {
+
+    height: 350px;
+    width: 300px;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center center;
+    flex-direction: column ;
+    flex-wrap:wrap ;
+  align-items: flex-start;
+
+  
+  
+  }
+
+  .center{
+    width: 70%;
+    margin: 10px auto;
+  }
+
+  .main-div{
+    padding: 0px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
