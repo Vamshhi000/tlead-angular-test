@@ -21,7 +21,7 @@ export class ServiceLayerService {
   constructor(private http:HttpClient,private commonServiceService:commonServiceService) { }
   isAuthenticated:boolean;
   user:Observable<User>
-  baseUrl:String='http://localhost:8080';
+  baseUrl:String='https://team-tlead.herokuapp.com';
 
 
   get nativeWindow(): ICustomWindow {
@@ -51,7 +51,7 @@ console.log(user+"register");
 
    jwtLogin(user:User){
 
-    return this.http.post("http://localhost:8080/loginUser",user,{responseType: 'text'});
+    return this.http.post("https://team-tlead.herokuapp.com/loginUser",user,{responseType: 'text'});
    }
 
   //  getUser():Observable<any>{
@@ -81,7 +81,7 @@ console.log(user+"register");
 
 getUser(){
 
-  return this.http.get("http://localhost:8080/sample",{responseType: 'text'});
+  return this.http.get("https://team-tlead.herokuapp.com/sample",{responseType: 'text'});
 }
 
 
