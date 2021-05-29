@@ -39,6 +39,7 @@ x:boolean=true
  numIcon:boolean;
  emailIcon:boolean;
 bothVerify:boolean=true;
+refidfromLink:string;
 // alert:boolean;
 // isSucuess:boolean;
 msg:string;
@@ -64,7 +65,7 @@ msg:string;
 let obj=JSON.parse(this.verified);
 console.log(this.verified)
 console.log(obj);
-
+this.ddisable();
   }
 
 
@@ -74,7 +75,11 @@ ddisable(){
 
   this.routees.paramMap.subscribe(params => {
     var id = params.get('id');
-    console.log(id);
+   if(id!=null){
+     this.refidfromLink=id;
+   }else{
+    this.refidfromLink="TLEAD55555" 
+   }
   });
 }
   sendemailRequest(): void {

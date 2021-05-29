@@ -180,7 +180,7 @@ this.serviceLayer.getOrderId(this.users.email).subscribe((res:any)=>{
     
     if (result.value) {
       this.router.navigate(['/homeScreen']);
-      location.replace("http://localhost:4200/homeScreen");
+      location.replace("https://t-lead.herokuapp.com/homeScreen");
      
   
     } 

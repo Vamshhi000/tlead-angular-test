@@ -43,8 +43,8 @@ x=["tttdgfeeee","sfsfssafre"]
 getrefId(){
 this.serviceLayer.getRefId(this.email).subscribe((res:any)=>{
   this.referalId=res.refId
-  // this.refLink=`http://localhost:4200/registerUser?refId=${this.referalId}`
-  this.refLink="https://www.task.telangana.gov.in/Job-Openings"
+  this.refLink=`https://t-lead.herokuapp.com/registerUser?refId=${this.referalId}`
+  // this.refLink="https://www.task.telangana.gov.in/Job-Openings"
 },(err:any)=>{
  
   console.log(err);
