@@ -25,7 +25,7 @@ import { ServiceLayerService } from '../service-layer.service';
 export class UserRegisterComponent implements OnInit {
 
   constructor(private fb:FormBuilder,public dialog: MatDialog,private serviceLayer:ServiceLayerService,
-    private commonservice:commonServiceService,private routees: ActivatedRoute,private snackBar: MatSnackBar
+    private commonservice:commonServiceService,private activatedRoute:ActivatedRoute,private snackBar: MatSnackBar
     ,private router:Router) { }
   myimg:string ="assets/T-LEADl.png";
   userform:FormGroup;
@@ -65,23 +65,23 @@ msg:string;
 let obj=JSON.parse(this.verified);
 console.log(this.verified)
 console.log(obj);
-this.ddisable();
+
+this.activatedRoute.queryParams.subscribe(params => {
+  console.log(params);
+  this.refidfromLink = params.refId;
+  if(params.refId!=null){
+    this.refidfromLink = params.refId;
+  }else{
+   this.refidfromLink="TLEAD55555" 
+  }
+
+});
   }
 
 
 
   
-ddisable(){
 
-  this.routees.paramMap.subscribe(params => {
-    var id = params.get('id');
-   if(id!=null){
-     this.refidfromLink=id;
-   }else{
-    this.refidfromLink="TLEAD55555" 
-   }
-  });
-}
   sendemailRequest(): void {
     const dialogRef = this.dialog.open(OtpVerificationComponent, {
       width: '400px',
