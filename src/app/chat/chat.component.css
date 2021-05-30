@@ -63,7 +63,7 @@ body{margin-top:20px;}
         display: none;
     }
 }
-@media (min-width: 400px) {
+@media (min-width: 350px) {
   .chat-search-box1 {
       display: none;
   }

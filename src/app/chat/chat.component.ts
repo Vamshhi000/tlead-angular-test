@@ -10,6 +10,7 @@ import { User } from '../model/form';
 import { ChatRequestAndSearchComponent } from '../chat-request-and-search/chat-request-and-search.component';
 import { ServiceLayerService } from '../service-layer.service';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -20,7 +21,7 @@ import { MatBottomSheet } from '@angular/material/bottom-sheet';
 export class ChatComponent implements OnInit,AfterViewInit {
 
   constructor(private commonService: commonServiceService,private _bottomSheet: MatBottomSheet
-    ,private servicelayer:ServiceLayerService,private el: ElementRef, private renderer:Renderer2) {
+    ,private snackBar: MatSnackBar,private servicelayer:ServiceLayerService,private el: ElementRef, private renderer:Renderer2) {
 
      }
 
@@ -141,7 +142,20 @@ onMessageReceived(message) {
 this.x.push(xx);
 }
 
+getallRequests(){
 
+  this.servicelayer.getAcceptRequests(this.email).subscribe((res:any)=>{
+    if(res.length===0){
+      this.snacbar("No New Requests",'mat-warn')
+     }else{
+      this._bottomSheet.open(ChatRequestAndSearchComponent,{data:{user:res,isAccept:true,isRequest:false,display:"CHAT REQUESTS"},hasBackdrop:true});
+  console.log(res);
+  
+}
+  },(err:any)=>{
+    console.log(err);
+  })
+}
 
   openBottomSheet(){
    this._bottomSheet.open(ChatRequestAndSearchComponent,{data:{isAccept:true,isRequest:false,display:"CHAT REQUESTS"},hasBackdrop:true});
@@ -194,5 +208,14 @@ sendd(){
 
 
 
+}
+snacbar(msg:string,color:string){
+
+  this.snackBar.open(msg,'', {
+    duration: 4000,
+    panelClass: ['mat-toolbar', color],
+    horizontalPosition:"center" ,
+    verticalPosition:"top" ,
+});
 }
 }
