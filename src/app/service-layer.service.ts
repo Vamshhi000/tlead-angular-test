@@ -288,4 +288,14 @@ deleteUsers(user:any):Observable<any>{
   return this.http.put<any>(`${this.baseUrl}/Admin/deleteUsers/`,user);
 
 }
+
+AdminregisterUser(user:User):Observable<User> {
+  this.commonServiceService.usersob$.subscribe((res:User)=>{
+    user.email=res.email;
+    user.phoneNumber=res.phoneNumber;
+  })
+  console.log(user+"register");
+      
+      return this.http.post<User>(`${this.baseUrl}/AdminregisterUser`,user);
+     }
 }

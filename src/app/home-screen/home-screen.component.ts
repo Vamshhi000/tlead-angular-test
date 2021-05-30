@@ -26,7 +26,7 @@ map=new Map();
 x=["tttdgfeeee","sfsfssafre"]
   ngOnInit(): void {
 
-    this.users=JSON.parse(localStorage. getItem('usr'))
+    this.users=JSON.parse(localStorage.getItem('usr'))
     this.email=this.users.email;
     
     this.getrefId();
@@ -43,7 +43,7 @@ x=["tttdgfeeee","sfsfssafre"]
 getrefId(){
 this.serviceLayer.getRefId(this.email).subscribe((res:any)=>{
   this.referalId=res.refId
-  this.refLink=`https://t-lead.herokuapp.com/registerUser?refId=${this.referalId}`
+  this.refLink=`https://t-lead.herokuapp.com/RegisterComponent?refId=${this.referalId}`
   // this.refLink="https://www.task.telangana.gov.in/Job-Openings"
 },(err:any)=>{
  

@@ -22,10 +22,7 @@ export class AdminLoginComponent implements OnInit {
     
      })
   }
-  ngAfterViewInit(){
 
-    this.renderer.setStyle(this.el.nativeElement.ownerDocument.body,'backgroundColor', '#374048');
-    }
 
 
     TleadLogin(){
@@ -36,8 +33,8 @@ export class AdminLoginComponent implements OnInit {
         this.snacbar(res.msg,'mat-primary')
         this.router.navigate(['/adminHome']);
       },(err:any)=>{
-        let obj= JSON.parse(err.error);
-        this.snacbar(obj.msg,'mat-warn');
+
+        this.snacbar(err.error.msg,'mat-warn');
         this.router.navigate(['/AdminLogin/Ij3UsKr1gL4dsZKcZ5FXwJNYh3o0IjURP5DmUeQh0Zrl6']);
         
       })

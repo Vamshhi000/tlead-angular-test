@@ -49,6 +49,7 @@ myimg:string ="assets/T-LEADl.png";
       if(err.status==0){
         localStorage.clear();
        this.router.navigate(['/AdminLogin/Ij3UsKr1gL4dsZKcZ5FXwJNYh3o0IjURP5DmUeQh0Zrl6']);
+       this.snacbar("Session Expired",'mat-warn');
       }
     });
   }
@@ -77,7 +78,11 @@ myimg:string ="assets/T-LEADl.png";
 
 
     },(err)=>{
-  console.log(err);
+      if(err.status==0){
+        localStorage.clear();
+       this.router.navigate(['/AdminLogin/Ij3UsKr1gL4dsZKcZ5FXwJNYh3o0IjURP5DmUeQh0Zrl6']);
+       this.snacbar("Session Expired",'mat-warn');
+      }
     });
 
   }
@@ -99,7 +104,11 @@ myimg:string ="assets/T-LEADl.png";
 
 
     },(err)=>{
-  console.log(err);
+      if(err.status==0){
+        localStorage.clear();
+       this.router.navigate(['/AdminLogin/Ij3UsKr1gL4dsZKcZ5FXwJNYh3o0IjURP5DmUeQh0Zrl6']);
+       this.snacbar("Session Expired",'mat-warn');
+      }
     });
   }
 
@@ -119,7 +128,11 @@ myimg:string ="assets/T-LEADl.png";
 
 
     },(err)=>{
-  console.log(err);
+      if(err.status==0){
+        localStorage.clear();
+       this.router.navigate(['/AdminLogin/Ij3UsKr1gL4dsZKcZ5FXwJNYh3o0IjURP5DmUeQh0Zrl6']);
+       this.snacbar("Session Expired",'mat-warn');
+      }
     });
  
   }

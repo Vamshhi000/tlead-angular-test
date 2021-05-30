@@ -35,18 +35,20 @@ export class AddUsersComponent implements OnInit {
   userRegister(){
 
 
-    this.serviceLayer.registerUser(this.userform.value).subscribe((res:any)=>{
+    this.serviceLayer.AdminregisterUser(this.userform.value).subscribe((res:any)=>{
   
  
   this.snacbar(res.msg,'mat-primary')
   this.dialogRef.close();
     },(err:any)=>{
       this.snacbar(err.error.msg,'mat-warn');
-      // this.dialogRef.close();
-     if(err.status==0){
-       localStorage.clear();
-      this.router.navigate(['/AdminLogin/Ij3UsKr1gL4dsZKcZ5FXwJNYh3o0IjURP5DmUeQh0Zrl6']);
-     }
+      this.dialogRef.close();
+      if(err.status==0){
+        localStorage.clear();
+        this.dialogRef.close();
+       this.router.navigate(['/AdminLogin/Ij3UsKr1gL4dsZKcZ5FXwJNYh3o0IjURP5DmUeQh0Zrl6']);
+       this.snacbar("Session Expired",'mat-warn');
+      }
     })
   }
   

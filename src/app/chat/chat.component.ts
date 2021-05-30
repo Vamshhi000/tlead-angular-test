@@ -56,7 +56,7 @@ export class ChatComponent implements OnInit,AfterViewInit {
     this.renderer.setStyle(this.el.nativeElement.ownerDocument.body,'backgroundColor', '#374048');
     
     }
-webSocketEndPoint: string = 'http://localhost:8080/ws';
+webSocketEndPoint: string = 'https://team-tlead.herokuapp.com/ws';
 // topic: string = "/topic/greetings";
 
 stompClient: any;

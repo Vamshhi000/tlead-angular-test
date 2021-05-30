@@ -56,11 +56,13 @@ this.userdata.paymentId=this.data.user.paymentId;
 
 
       this.snacbar(err.error.msg,'mat-warn');
-     
-     if(err.status==0){
-       localStorage.clear();
-      this.router.navigate(['/AdminLogin/Ij3UsKr1gL4dsZKcZ5FXwJNYh3o0IjURP5DmUeQh0Zrl6']);
-     }
+      this.dialogRef.close();
+      if(err.status==0){
+        this.dialogRef.close();
+        localStorage.clear();
+       this.router.navigate(['/AdminLogin/Ij3UsKr1gL4dsZKcZ5FXwJNYh3o0IjURP5DmUeQh0Zrl6']);
+       this.snacbar("Session Expired",'mat-warn');
+      }
 
     })
 }
