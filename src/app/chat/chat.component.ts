@@ -57,7 +57,7 @@ export class ChatComponent implements OnInit,AfterViewInit {
     this.renderer.setStyle(this.el.nativeElement.ownerDocument.body,'backgroundColor', '#374048');
     
     }
-webSocketEndPoint: string = 'https://team-tlead.herokuapp.com/ws';
+webSocketEndPoint: string = 'https://team-tlead.herokuapp.com:8080/ws';
 // topic: string = "/topic/greetings";
 
 stompClient: any;
@@ -70,8 +70,8 @@ stompClient: any;
 connect(chatId:any) {
   console.log(this.sx);
     console.log("Initialize WebSocket Connection");
-    // let ws = new SockJS(this.webSocketEndPoint);
-    let ws = new SockJS('/tLead');
+    let ws = new SockJS(this.webSocketEndPoint);
+
     // let ws = Socket(this.webSocketEndPoint);
     this.stompClient = Stomp.over(ws);
     const _this = this;
