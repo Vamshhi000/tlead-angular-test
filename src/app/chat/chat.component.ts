@@ -70,7 +70,8 @@ stompClient: any;
 connect(chatId:any) {
   console.log(this.sx);
     console.log("Initialize WebSocket Connection");
-    let ws = new SockJS(this.webSocketEndPoint);
+    // let ws = new SockJS(this.webSocketEndPoint);
+    let ws = new SockJS('/tLead');
     // let ws = Socket(this.webSocketEndPoint);
     this.stompClient = Stomp.over(ws);
     const _this = this;
